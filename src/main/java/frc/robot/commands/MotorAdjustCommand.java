@@ -8,10 +8,11 @@ import frc.robot.subsystems.OneMotorSubsystem;
 
 public class MotorAdjustCommand extends CommandBase {
     private final OneMotorSubsystem oneMotorSubsystem;
-    private final XboxController controller = new XboxController(0);
+    private final XboxController controller;
 
-    public MotorAdjustCommand(OneMotorSubsystem oneMotorSubsystem) {
+    public MotorAdjustCommand(OneMotorSubsystem oneMotorSubsystem, XboxController controller) {
         this.oneMotorSubsystem = oneMotorSubsystem;
+        this.controller = controller;
         // each subsystem used by the command must be passed into the
         // addRequirements() method (which takes a vararg of Subsystem)
         addRequirements(this.oneMotorSubsystem);
